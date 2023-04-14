@@ -1,59 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="kalkulator.css">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <title>Kalkulator javascript</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="kalkulator.css" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <title>Kalkulator Javascript</title>
+  </head>
+  <body>
     <div class="container">
-        <div class="calculator">
-            <input type="text" placeholder="0" id="output-screen">
-            <button onclick="bersihkan()">C</button>
-            <button onclick="del()">Del</button>
-            <button onclick="display('%')">%</button>
-            <button onclick="display('+')">+</button>
-            <button onclick="display('/')">/</button>
-            <button onclick="display('7')">7</button>
-            <button onclick="display('8')">8</button>
-            <button onclick="display('*')">X</button>
-            <button onclick="display('4')">4</button>
-            <button onclick="display('5')">5</button>
-            <button onclick="display('6')">6</button>
-            <button onclick="display('_')">_</button>
-            <button onclick="display('1')">1</button>
-            <button onclick="display('2')">2</button>
-            <button onclick="display('3')">3</button>
-            <button onclick="display('+')">+</button>
-            <button onclick="display('-')">-</button>
-            <button onclick="display('0')">0</button>
+      <div class="calculator">
+        <input type="text" placeholder="0" id="output-screen" />
+        <button id="btnc" onclick="bersihkan()">C</button>
+        <button id="btnx" onclick="del()">
+          🗑️
+        </button>
+        <button id="btnu" onclick="display('%')">%</button>
+        <button id="btny" onclick="display('+')">+</button>
+        <button id="btnk" onclick="display('/')">/</button>
+        <button id="btn7" onclick="display('7')">7</button>
+        <button id="btn8" onclick="display('8')">8</button>
+        <button id="btnm" onclick="display('*')">X</button>
+        <button id="btn4" onclick="display('4')">4</button>
+        <button id="btn5" onclick="display('5')">5</button>
+        <button id="btn6" onclick="display('6')">6</button>
+        <button id="btnj" onclick="display('_')">_</button>
+        <button id="btn1" onclick="display('1')">1</button>
+        <button id="btn2" onclick="display('2')">2</button>
+        <button id="btn3" onclick="display('3')">3</button>
+        <button id="btnn" onclick="display('+')">+</button>
+        <button id="btnh" onclick="display('-')">-</button>
+        <button id="btn0" onclick="display('0')">0</button>
 
-            <button onclick="calculator()" class="hasil">=</button>
-        </div>
+        <button id="btnhasil" onclick="calculator()" class="hasil">=</button>
+      </div>
     </div>
 
+    <script src="./js/sweetalert.js"></script>
     <script>
-        let outputscreen = document.getElementById("output-screen");
-        function display(num){
-            outputscreen.value +=num;
+      let outputscreen = document.getElementById("output-screen");
+      function display(num) {
+        outputscreen.value += num;
+      }
+      function calculator() {
+        try {
+          outputscreen.value = eval(outputscreen.value);
+        } catch (err) {
+          Swal.fire({
+            icon: "error",
+            title: "Invalid output",
+            text: "please check your numbers again!",
+          });
         }
-        function calculator(){
-            try{
-                outputscreen.value = eval(outputscreen.value);
-            }
-            catch(err){
-                alert("invalid");
-            }
-        }
-        function bersihkan(){
-            outputscreen.value = "";
-        }
-        function del(){
-            outputscreen.value = outputscreen.value.slice(0,-1);
-        }
+      }
+      function bersihkan() {
+        outputscreen.value = "";
+      }
+      function del() {
+        outputscreen.value = outputscreen.value.slice(0, -1);
+      }
+
+      //ketika button di klik maka akan berbunyi
+      //btnc
+      const button = document.getElementById("btnc");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+
+      //btnx
+      const btnx = document.getElementById("btnx");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+
+      //btn u
+      const btnu = document.getElementById("btnu");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btn y
+      const btny = document.getElementById("btny");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+
+      //btn k
+      const btnk = document.getElementById("btnk");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+
+      //btn 7
+      const btn7 = document.getElementById("btn7");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btn 8
+      const btn8 = document.getElementById("btn8");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btnm
+      const btnm = document.getElementById("btnm");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+
+      //btn4
+      const btn4 = document.getElementById("btn4");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btn5
+      const btn5 = document.getElementById("btn5");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btn6
+      const btn6 = document.getElementById("btn6");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btnj
+      const btnj = document.getElementById("btnj");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btn1
+      const btn1 = document.getElementById("btn1");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btn2
+      const btn2 = document.getElementById("btn2");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btn3
+      const btn3 = document.getElementById("btn3");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btnn
+      const btnn = document.getElementById("btnn");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btnh
+      const btnh = document.getElementById("btnh");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+      //btn0
+      const btn0 = document.getElementById("btn0");
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
+
+      //btnhasil
+      const btnhasil = document.getElementById('btnhasil');
+
+      button.addEventListener("click", () => {
+        const audio = new Audio("./assets/kalkulator.mp3");
+        audio.play();
+      });
     </script>
-</body>
+  </body>
 </html>
